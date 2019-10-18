@@ -30,6 +30,13 @@ server.post('/users', (req, res) => {
     })
 })
 
+server.delete('/users/:id', (req, res) => {
+    usersModel.remove(req.params.id).then(count => {
+        res.status(200).json(count)
+    }).catch(err => {
+        res.status(500).json(err)
+    })
+})
 
 
 

@@ -20,7 +20,7 @@ async function update(id, changes) {
 }
 
 function remove(id) {
-  return db('users').where({id:id}).del();
+  return db('users').where({id}).del();
 }
 
 function getAll() {
@@ -28,5 +28,6 @@ function getAll() {
 }
 
 function findById(id) {
-  return null;
+  return null;   
 }
+     

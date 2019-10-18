@@ -55,5 +55,5 @@ describe("remove()", () => {
     afterAll(async () => {
       await db("users").truncate();
     });
-;
+
 });
