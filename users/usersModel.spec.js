@@ -31,5 +31,9 @@ describe("getAll()", () => {
     it('should return users from database', async() => {
         const usersNum = await db('users');
         expect(usersNum).toHaveLength(0);
+        await usersModel.insert({ name: "Min" })
+        await usersModel.insert({ name: "Kelly" });
+        const usersRecord = await usersModel.getAll();
+        expect(usersRecord).toHaveLength(2);
     })
 })
