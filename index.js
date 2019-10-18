@@ -1,19 +1,6 @@
-const express = require("express");
-const helmet = require("helmet");
-const cors = require("cors");
+require("dotenv").config();
 
-const server = express();
-const usersRouter = require("./users/userRouter");
-
-server.use(helmet());
-server.use(cors());
-server.use(express.json());
-
-server.get("/", (req, res) => {
-  res.json({ message: "WELCOME!!!" });
-});
-
-server.use("/api/", usersRouter);
+const server = require("./api/server.js");
 const port = process.env.PORT || 4545;
 
 server.listen(port, () => {
